@@ -1,0 +1,18 @@
+---
+# tasks file for new_users
+- name: Create home directorys
+  file:
+    path: "{{ home_dir }}/{{ item }}"
+    state: directory
+  with_sequence: start=1 end={{ num_users }}
+
+- name: Create users
+  user:
+    name: "{{ pc_name }}{{ item }}"
+    home: "{{ home_dir }}/{{ item }}"
+  with_sequence: start=1 end={{ num_users }}
+
+- name: Home directory mounting
+  lineinfile:
+    path: /etc/fstab
+    line: "{{ home_dir }} / ext4 defaults 0 0"  

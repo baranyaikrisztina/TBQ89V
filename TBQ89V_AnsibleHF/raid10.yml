@@ -1,0 +1,7 @@
+---
+- name: LVM RAID10 create
+  hosts: localhost
+  connection: local
+  roles:
+    - raid10
+

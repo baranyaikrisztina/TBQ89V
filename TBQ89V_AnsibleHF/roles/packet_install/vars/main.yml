@@ -1,0 +1,4 @@
+---
+# vars file for packet_install
+package_name: httpd
+service_name: httpd.service

@@ -1,0 +1,28 @@
+---
+# tasks file for raid10
+- name: Install packages
+  yum:
+    name: "{{ package }}"
+    state: present
+
+- name: Create volume
+  lvg:
+    pvs: /dev/sda,/dev/sdb,/dev/sdc,/dev/sdd
+    vg: myvg
+
+- name: Create logical
+  lvol:
+    vg: myvg
+    lv: mylv
+    size: 1g
+    pvs: /dev/sda,/dev/sdb,/dev/sdc,/dev/sdd
+
+- name: RAID 10
+  shell: |
+    lvcreate --type raid10 -i 2 -n my_raid10 myvg -l 100%FREE
+
+ 
+
+
+
+

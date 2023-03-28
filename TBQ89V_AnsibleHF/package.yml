@@ -1,0 +1,5 @@
+---
+- name: Package installation
+  hosts: workstation
+  roles:
+    - packet_install

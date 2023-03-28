@@ -1,0 +1,6 @@
+---
+# vars file for new_users
+home_dir: /all_user_home
+num_users: 10
+pc_name: "{{ ansible_hostname }}"
+

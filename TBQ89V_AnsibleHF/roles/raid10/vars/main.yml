@@ -1,0 +1,3 @@
+---
+# vars file for raid10
+package: lvm2

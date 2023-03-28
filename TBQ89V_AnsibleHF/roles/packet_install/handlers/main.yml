@@ -1,0 +1,7 @@
+---
+# handlers file for packet_install
+- name: restart service
+  service:
+    name: "{{ service_name }}"
+    state: restarted
+

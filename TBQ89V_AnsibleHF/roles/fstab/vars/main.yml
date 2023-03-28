@@ -1,0 +1,4 @@
+---
+# vars file for fstab
+dir_path: /data/dir
+dev: /dev/vda1

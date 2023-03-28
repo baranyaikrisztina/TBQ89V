@@ -1,0 +1,10 @@
+- name: Lvm
+  lv:
+    vg: myvg
+    lv: "{{ item.name }}"
+    size: "{{ item.size }}"
+  with_items:
+    - { name: lv1, size: 1G }
+    - { name: lv2, size: 1G }
+    - { name: lv3, size: 1G }
+    - { name: lv4, size: 1G }

@@ -1,0 +1,12 @@
+---
+# tasks file for fstab
+- name: Create directory
+  file:
+    path: "{{ dir_path }}"
+    state: directory
+    
+- name: Fstab mounting
+  lineinfile:
+    path: /etc/fstab
+    line: "{{ dev }} {{ dir_path }} ext4 defaults 0 0"
+

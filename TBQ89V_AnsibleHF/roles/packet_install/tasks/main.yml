@@ -1,0 +1,15 @@
+---
+# tasks file for packet_install
+- name: Package installation
+  dnf:
+    name: "{{ package_name }}"
+    state: present
+
+- name: service starting and restarting
+  ansible.builtin.service:
+    name: "{{ service_name }}"
+    state: started
+    enabled: true
+  notify:
+    - restart service
+

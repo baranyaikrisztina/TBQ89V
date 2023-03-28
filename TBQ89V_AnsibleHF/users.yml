@@ -1,0 +1,5 @@
+---
+- name: User create playbook
+  hosts: workstation
+  roles:
+    - new_users
